@@ -95,8 +95,8 @@ def main():
         # User-based preferences
         st.write('### Enter Your Three Favorite Movies')
         movie_1 = st.selectbox('Fisrt Option',title_list[1000:2000])
-        movie_2 = st.selectbox('Second Option',title_list[2100:3000])
-        movie_3 = st.selectbox('Third Option',title_list[3100:4000])
+        movie_2 = st.selectbox('Second Option',title_list[2100:2400])
+        movie_3 = st.selectbox('Third Option',title_list[2457:4000])
         fav_movies = [movie_1,movie_2,movie_3]
 
         # Perform top-10 movie recommendation generation
