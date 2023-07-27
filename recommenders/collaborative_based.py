@@ -122,7 +122,7 @@ def collab_model(movie_list,top_n=10):
     movie_ids = pred_movies(movie_list)
     df_init_users = ratings_df[ratings_df['userId']==movie_ids[0]]
     for i in movie_ids :
-        df_init_users=df_init_users.append(ratings_df[ratings_df['userId']==i])
+        df_init_users=df_init_users._append(ratings_df[ratings_df['userId']==i])
     # Getting the cosine similarity matrix
     cosine_sim = cosine_similarity(np.array(df_init_users), np.array(df_init_users))
     idx_1 = indices[indices == movie_list[0]].index[0]
@@ -137,7 +137,7 @@ def collab_model(movie_list,top_n=10):
     score_series_2 = pd.Series(rank_2).sort_values(ascending = False)
     score_series_3 = pd.Series(rank_3).sort_values(ascending = False)
      # Appending the names of movies
-    listings = score_series_1.append(score_series_1).append(score_series_3).sort_values(ascending = False)
+    listings = score_series_1._append(score_series_1)._append(score_series_3).sort_values(ascending = False)
     recommended_movies = []
     # Choose top 50
     top_50_indexes = list(listings.iloc[1:50].index)

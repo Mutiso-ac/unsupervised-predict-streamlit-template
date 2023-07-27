@@ -80,7 +80,7 @@ def content_model(movie_list,top_n=10):
     """
     # Initializing the empty list of recommended movies
     recommended_movies = []
-    data = data_preprocessing(27000)
+    data = data_preprocessing(5000)
     # Instantiating and generating the count matrix
     count_vec = CountVectorizer()
     count_matrix = count_vec.fit_transform(data['keyWords'])
@@ -99,7 +99,7 @@ def content_model(movie_list,top_n=10):
     score_series_2 = pd.Series(rank_2).sort_values(ascending = False)
     score_series_3 = pd.Series(rank_3).sort_values(ascending = False)
     # Getting the indexes of the 10 most similar movies
-    listings = score_series_1.append(score_series_1).append(score_series_3).sort_values(ascending = False)
+    listings = score_series_1._append(score_series_1)._append(score_series_3).sort_values(ascending = False)
 
     # Store movie names
     recommended_movies = []
